@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width" name="viewport" />
+    <title>Eolia Map</title>
+    <!--   import mapbox gl js and css   -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!--  map css  -->
+  <style>
+    #map {
+      border-left: 1px solid #fff;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+    }
+
+    .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      overflow: visible;
+    }
+
+    .mapboxgl-popup-content {
+      box-shadow: none;
+      color: black !important;
+    }
+
+    .mapboxgl-popup-close-button {
+      top: 10%;
+      right: 10%;
+    }
+  </style>
+
+  <body>
+    <!-- map element -->
+    <!-- This is where the map will live -->
+    <div id="map"></div>
+
+    <!-- web map script -->
+    <script>
+      // access token required for loading your custom styles
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiaWFuc2FubmFyIiwiYSI6ImNrOHdnajF6MDB3YXQzbm1oMm95eWltaTMifQ.cv0Yq39pzSZ5dFMI0jC7BQ";
+
+      // create a new map using the style from mapbox and passing some parameters for the initial view
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/iansannar/ck9rz6wkb1yeu1ioz2iflnjaf",
+        // lon, lat
+        center: [0, 0],
+        zoom: 1.25,
+        maxZoom: 18,
+        minZoom: 1
+      });
+
+      // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on("mouseenter", "Points of Interest", function() {
+          map.getCanvas().style.cursor = "pointer";
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', "Points of Interest", function () {
+        map.getCanvas().style.cursor = '';
+        });
+      
+      // When a click event occurs on a feature in the places layer, open a popup at the
+      // location of the feature, with description HTML from its properties.
+      map.on("click", "Points of Interest", function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var name = e.features[0].properties.title;
+        var subtitle = e.features[0].properties.subtitle;
+        var info = e.features[0].properties.info;
+
+        // create a variable to hold the popupcontent so we can conditionally add to it
+        var popupContent;
+
+        if (name != null){
+        popupContent = "<h2>" + name + "</h2>";
+        }
+        
+        if (subtitle != null) {
+          popupContent += "\n<h3>" + subtitle +"</h3>";
+        }
+
+        if (info != null) {
+          popupContent += "<hr>" + info;
+        }
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // once the we've defined the properties for our popup, this part actually
+        // displays that popup at the coordinates of the click event, with the inner html
+        // we defined, and adds it to the map object.
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(popupContent)
+          .addTo(map);
+      });
+      
+      // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on("mouseenter", "Cities", function() {
+          map.getCanvas().style.cursor = "pointer";
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', "Cities", function () {
+        map.getCanvas().style.cursor = '';
+        });
+      
+      // When a click event occurs on a feature in the places layer, open a popup at the
+      // location of the feature, with description HTML from its properties.
+      map.on("click", "Cities", function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var name = e.features[0].properties.title;
+        var subtitle = e.features[0].properties.subtitle;
+        var info = e.features[0].properties.info;
+
+        // create a variable to hold the popupcontent so we can conditionally add to it
+        var popupContent;
+
+        if (name != null){
+        popupContent = "<h2>" + name + "</h2>";
+        }
+        
+        if (subtitle != null) {
+          popupContent += "\n<h3>" + subtitle +"</h3>";
+        }
+
+        if (info != null) {
+          popupContent += "<hr>" + info;
+        }
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // once the we've defined the properties for our popup, this part actually
+        // displays that popup at the coordinates of the click event, with the inner html
+        // we defined, and adds it to the map object.
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(popupContent)
+          .addTo(map);
+      });
+      
+    </script>
+  </body>
+</html>
