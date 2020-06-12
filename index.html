@@ -94,6 +94,7 @@
 			var coordinates = e.features[0].geometry.coordinates.slice();
 			var name = e.features[0].properties.title;
 			var subtitle = e.features[0].properties.subtitle;
+			var size = e.features[0].properties.size;
 			var info = e.features[0].properties.info;
 
 			// create a variable to hold the popupcontent so we can conditionally add to it
@@ -105,6 +106,10 @@
 
 			if (subtitle != null) {
 				popupContent += "\n<h3>" + subtitle +"</h3>";
+			}
+			
+			if (size != null) {
+				popupContent += "\n<h3>Size: " + size +"</h3>";
 			}
 
 			if (info != null) {
