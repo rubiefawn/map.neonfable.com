@@ -16,7 +16,7 @@ var map = new mapboxgl.Map({
 	maxZoom: 6.0,
 	maxPitch: 70,
 	pitch: 15,
-	maxBounds: [[-360,-80],[360,80]]
+	maxBounds: [[-3600,-80],[3600,80]]
 });
 
 // Add various controls to the map, including a fullscreen button, navigation controls, and attribution.
