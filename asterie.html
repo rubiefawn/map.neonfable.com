@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width" name="viewport" />
+
+	<!-- import mapbox gl js and css -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet'/>
+
+	<!-- site info -->
+	<title>Map of Asterie</title>
+	<link id="favicon" rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+
+	<!-- import other css -->
+	<link href='map.css' rel='stylesheet'/>
+	<link href='assets/fonts.css' rel='stylesheet'/>
+	
+	<!-- open graph markup -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:title" content="Map of Asterie" />
+	<meta property="og:description" content="Interactive Map of Asterie by Neon Fable" />
+	<meta property="og:image" content="https://map.neonfable.com/assets/asterie.png" />
+	<meta property="og:image:width" content="1000" />
+	<meta property="og:image:height" content="1000" />
+
+	<!-- twitter card-->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@saint_stella" />
+	<meta name="twitter:title" content="Map of Asterie" />
+	<meta name="twitter:description" content="Interactive Map of Asterie by Neon Fable" />
+	<meta name="twitter:image" content="https://map.neonfable.com/assets/asterie.png" />
+</head>
+
+<style>
+	.mapboxgl-popup h1 {
+		font-family: bebas-neue, "Bebas Neue", sans-serif;
+	}
+</style>
+
+<body>
+	<div id="map">
+		<script src="map.js" type="text/javascript"></script>
+		<script src="asterie.js" type="text/javascript"></script>
+	</div>
+</body>
+
+</html>

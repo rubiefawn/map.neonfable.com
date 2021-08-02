@@ -1,0 +1,67 @@
+#map {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.mapbox-gl-home {
+	color: 333;
+	background-image: url('assets/icons/home.svg');
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+img.inline-icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	vertical-align: text-top;
+}
+
+.mapboxgl-ctrl-attrib {
+	border-radius: 4px;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-size: 16px;
+}
+
+.mapboxgl-popup {
+	max-width: 600px;
+	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	overflow: visible;
+}
+
+.mapboxgl-popup-content {
+	box-shadow: none;
+	color: black !important;
+	padding: 24px;
+	padding-top: 0px;
+	border-radius: 12px;
+}
+
+.mapboxgl-popup-close-button {
+	top: 5%;
+	right: 5%;
+}
+
+.mapboxgl-popup h1 {
+	font-family: sans-serif;
+	font-size: xx-large;
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+.mapboxgl-popup h2 {
+	color: dimgrey;
+	font-size: small;
+	text-align: center;
+	font-style: italic;
+	font-weight: normal;
+	margin: 4px;
+}
