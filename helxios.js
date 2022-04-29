@@ -29,9 +29,9 @@ map.addControl(new mapboxgl.AttributionControl({customAttribution: "<a href='htt
 // ---------------- JavaScript Events ----------------
 
 // enable click events for clickable layers
-//map.on("click", "points-of-interest", createPopup);
-//map.on("click", "cities", createPopup);
+map.on("click", "points-of-interest", createCardPopup);
+map.on("click", "cities", createCardPopup);
 
 // Change the cursor when it enters and leaves clickable layers
-//map.on("mouseenter", "points-of-interest", function() { map.getCanvas().style.cursor = "pointer"; });
-//map.on('mouseleave', "points-of-interest", function () { map.getCanvas().style.cursor = ''; });
+map.on("mouseenter", "points-of-interest", function() { map.getCanvas().style.cursor = "pointer"; });
+map.on('mouseleave', "points-of-interest", function () { map.getCanvas().style.cursor = ''; });

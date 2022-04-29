@@ -31,23 +31,25 @@ img.inline-icon {
 	font-size: 16px;
 }
 
-.mapboxgl-popup {
-	max-width: 600px;
-	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-	overflow: visible;
-}
-
 .mapboxgl-popup-content {
 	box-shadow: none;
-	color: black !important;
-	padding: 24px;
-	padding-top: 0px;
-	border-radius: 12px;
+	padding: 0;
+	margin: 0;
+	width: 63mm;
+	height: 88mm;
+	border-radius: 2.75mm;
+	margin: 0;
+	background-color: #79867c;
+}
+
+.mapboxgl-popup-tip {
+	display: none;
 }
 
 .mapboxgl-popup-close-button {
 	top: 5%;
 	right: 5%;
+	display: none;
 }
 
 .mapboxgl-popup h1 {
@@ -81,24 +83,27 @@ div.card {
 	margin-bottom: 2mm;
 	margin-left: 2.5mm;
 	margin-right: 2.5mm;
+	overflow: hidden;
+	align-content: center;
 }
 
 .lore {
-	font-size: 0.75em;
+	font-size: 1em;
 	width: 58mm;
 	color: white;
-	background-color: #808080;
 	max-height: 24mm;
 	margin-left: 2.5mm;
 	margin-right: 2.5mm;
 	overflow-wrap: break-word;
 	overflow-y: hidden;
+	font-family: "ITC Souvenir";
+	line-height: 100%;
 }
 
 h1.card {
 	padding: 0;
 	white-space: pre-wrap;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	text-align: center;
 	height: 10mm;
 	max-height: 10mm;
