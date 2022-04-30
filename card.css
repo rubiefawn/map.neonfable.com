@@ -68,7 +68,7 @@ img.inline-icon {
 	margin: 4px;
 }
 
-div.card {
+#card-body {
 	width: 63mm;
 	height: 82mm;
 	border-radius: 2.75mm 2.75mm 0 0;
