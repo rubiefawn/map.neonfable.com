@@ -10,7 +10,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoibmVvbmZhYmxlIiwiYSI6ImNsMmY3Z3BkYjAxZnMzbm50Y
 // Create a new MapboxGL map, change its default settings
 var map = new mapboxgl.Map({
 	container: "map",
-	style: "mapbox://styles/neonfable/cl2i3rd7n000x14ms3oa3sllu",
+	style: "mapbox://styles/neonfable/cl2u6ia1z000l15t7fccvsbtq",
 	center: mapCenter,
 	zoom: defaultZoom,
 	maxZoom: 6.0,
