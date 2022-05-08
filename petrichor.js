@@ -24,7 +24,7 @@ var map = new mapboxgl.Map({
 map.addControl(new mapboxgl.FullscreenControl());
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new MapboxGLButtonControl({ className: "mapbox-gl-home", title: "Reset view", eventHandler: function(e) {map.flyTo({center: mapCenter, zoom: 2, pitch: 15, bearing: 0, speed: 0.5 });} } , "top-right"));
-map.addControl(new mapboxgl.AttributionControl({customAttribution: "<a href='https://www.fiverr.com/neonfable/make-you-an-interactive-map-for-your-roleplaying-game'> <img src='assets/icons/neonfable.svg' alt='Neon Fable logo' class='inline-icon'> Crafted by <b>Neon Fable</b>"}));
+map.addControl(new mapboxgl.AttributionControl({customAttribution: "<a href='https://map.neonfable.com' target='_blank' rel='noopener noreferrer'> <img src='assets/icons/neonfable.svg' alt='Neon Fable logo' class='inline-icon'> Crafted by <b>Neon Fable</b>"}));
 
 // ---------------- JavaScript Events ----------------
 
