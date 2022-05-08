@@ -86,6 +86,8 @@ img.inline-icon {
 	margin-right: 2.5mm;
 	overflow: hidden;
 	align-content: center;
+	image-rendering: smooth;
+	object-fit: cover;
 }
 
 .lore {

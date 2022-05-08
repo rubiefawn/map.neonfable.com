@@ -5,12 +5,12 @@ defaultZoom = 2;
 
 // Mapbox public access token
 // This can be found at https://account.mapbox.com/ under Access Tokens, or in the Share menu for your Mapbox map style
-mapboxgl.accessToken = "pk.eyJ1IjoiaWFuc2FubmFyIiwiYSI6ImNrOHdnajF6MDB3YXQzbm1oMm95eWltaTMifQ.cv0Yq39pzSZ5dFMI0jC7BQ";
+mapboxgl.accessToken = "pk.eyJ1IjoibmVvbmZhYmxlIiwiYSI6ImNsMmY3Z3BkYjAxZnMzbm50YjV0dGdqd28ifQ.FsRTdMO04axLM8lE10K7Hw";
 
 // Create a new MapboxGL map, change its default settings
 var map = new mapboxgl.Map({
 	container: "map",
-	style: "mapbox://styles/iansannar/ck9rz6wkb1yeu1ioz2iflnjaf",
+	style: "mapbox://styles/neonfable/cl2wdvd9r001915okcv3tef2g",
 	center: mapCenter,
 	zoom: defaultZoom,
 	maxZoom: 6.0,
@@ -29,11 +29,8 @@ map.addControl(new mapboxgl.AttributionControl({customAttribution: "<a href='htt
 // ---------------- JavaScript Events ----------------
 
 // enable click events for clickable layers
-map.on("click", "points-of-interest", createPopup);
-map.on("click", "cities", createPopup);
+map.on("click", "points-of-interest", createCardPopup);
 
 // Change the cursor when it enters and leaves clickable layers
-map.on("mouseenter", "cities", function() { map.getCanvas().style.cursor = "pointer"; });
-map.on("mouseenter", "points-of-interest", function() { map.getCanvas().style.cursor = "pointer"; });
-map.on('mouseleave', "cities", function () { map.getCanvas().style.cursor = ''; });
+map.on("mouseenter", "points-of-interest", changeCursor);
 map.on('mouseleave', "points-of-interest", function () { map.getCanvas().style.cursor = ''; });

@@ -5,23 +5,18 @@
 	<meta charset="utf-8" />
 	<meta content="width=device-width" name="viewport" />
 
-	<!-- import mapbox gl js and css -->
-	<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
-	<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet'/>
-
 	<!-- site info -->
-	<title>Map of Helxios</title>
-	<link id="favicon" rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+	<title>Neon Fable Maps</title>
+	<link id="favicon" rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
 	<!-- import other css -->
-	<link href='card.css' rel='stylesheet'/>
-	<link href='assets/fonts.css' rel='stylesheet'/>
-	
+	<link href='assets/fonts.css' rel='stylesheet' />
+
 	<!-- open graph markup -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://map.neonfable.com/helxios" />
-	<meta property="og:title" content="Map of Helxios" />
-	<meta property="og:description" content="Interactive Map of Helxios by Neon Fable" />
+	<meta property="og:url" content="https://map.neonfable.com" />
+	<meta property="og:title" content="Map of Eolia III" />
+	<meta property="og:description" content="Neon Fable Map Portfolio" />
 	<meta property="og:image" content="https://map.neonfable.com/assets/eolia-iii.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="1200" />
@@ -29,15 +24,88 @@
 	<!-- twitter card-->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@neon_fable" />
-	<meta name="twitter:title" content="Map of Helxios" />
-	<meta name="twitter:description" content="Interactive Map of Helxios by Neon Fable" />
+	<meta name="twitter:title" content="Neon Fable Maps" />
+	<meta name="twitter:description" content="Neon Fable Map Portfolio" />
 	<meta name="twitter:image" content="https://map.neonfable.com/assets/eolia-iii.png" />
+
+	<style>
+		html, body, .container {
+			background-color: #0b0604;
+			display: table;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		.content {
+			display: table-cell;
+			padding: 0;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		h1, h2, p {
+			text-align: center;
+			font-family: "ITC Souvenir";
+			color: #e7e0d9;
+			margin: 1vh;
+		}
+
+		h1 {
+			font-size: 64pt;
+		}
+
+		h2 {
+			font-size: 32pt;
+		}
+
+		button {
+			text-align: center;
+			justify-content: center;
+			font-family: "ITC Souvenir";
+			font-size: 16pt;
+			color: #e7e0d9;
+			background-color: #31281f;
+			border: 0;
+			margin: 1vh;
+			padding: 0.65em;
+			border-radius: 2rem;
+			cursor: pointer;
+			transition: box-shadow .2s, -webkit-box-shadow .2s, background-color .08s, color .08s;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+		}
+
+		button:hover {
+			box-shadow: #ad9680 0 0 0 3px, transparent 0 0 0 0;
+		}
+		
+		button:active {
+			background-color: #e7e0d9;
+			color: #31281f;
+		}
+	</style>
 </head>
 
 <body>
-	<div id="map">
-		<script src="map.js" type="text/javascript"></script>
-		<script src="helxios.js" type="text/javascript"></script>
+	<div class="container">
+		<div class="content">
+			<h1>Neon Fable</h1>
+			<h2>Interactive Fantasy Maps</h2>
+			<a href="https://www.fiverr.com/share/kbgLKW" target="_blank" rel="noopener noreferrer"><button>Commission a
+					map</button></a>
+
+			<a href="eolia-iii.html" target="_blank" rel="noopener noreferrer"><button>"Eolia III"
+					fantasy map</button></a>
+
+			<a href="helxios.html" target="_blank" rel="noopener noreferrer"><button>"Helxios"
+					fantasy map</button></a>
+
+			<a href="petrichor.html" target="_blank" rel="noopener noreferrer"><button>"Petrichor"
+					fantasy map</button></a>
+		</div>
 	</div>
 </body>
 
