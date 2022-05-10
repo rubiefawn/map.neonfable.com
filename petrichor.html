@@ -38,7 +38,26 @@
 <body>
 	<div id="map">
 	<script src="map.js" type="text/javascript"></script>
-	<script src="petrichor.js" type="text/javascript"></script>
+	<script>
+		// these defaults are used for the map object as well as the reset view button
+		const defaultCenter = [0, -10];
+		const defaultZoom = 2;
+		const defaultPitch = 15;
+
+		var map = new mapboxgl.Map({
+			container: "map",
+			style: "mapbox://styles/neonfable/cl2u6ia1z000l15t7fccvsbtq",
+			center: defaultCenter,
+			zoom: defaultZoom,
+			pitch: defaultPitch,
+			maxZoom: 6.0,
+			maxPitch: 70,
+			maxBounds: [[-270, -80], [270, 80]]
+		});
+
+		// see ./map.js for boilerplate
+		addInteractivity(map);
+	</script>
 	</div>
 </body>
 

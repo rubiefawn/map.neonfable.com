@@ -35,79 +35,119 @@
 
 	<style>
 		#map {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-}
+			position: absolute;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+		}
 
-.mapbox-gl-home {
-	color: 333;
-	background-image: url('assets/icons/home.svg');
-	background-size: 60%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+		.mapbox-gl-home {
+			color: 333;
+			background-image: url('assets/icons/home.svg');
+			background-size: 60%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 
-img.inline-icon {
-	display: inline-block;
-	width: 17px;
-	height: 17px;
-	vertical-align: text-top;
-}
+		img.inline-icon {
+			display: inline-block;
+			width: 17px;
+			height: 17px;
+			vertical-align: text-top;
+		}
 
-.mapboxgl-ctrl-attrib {
-	border-radius: 4px;
-}
+		.mapboxgl-ctrl-attrib {
+			border-radius: 4px;
+		}
 
-.mapboxgl-ctrl-attrib-inner {
-	margin-top: 4px;
-	margin-bottom: 4px;
-	font-size: 16px;
-}
+		.mapboxgl-ctrl-attrib-inner {
+			margin-top: 4px;
+			margin-bottom: 4px;
+			font-size: 16px;
+		}
 
-.mapboxgl-popup {
-	max-width: 600px;
-	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-	overflow: visible;
-}
+		.mapboxgl-popup {
+			max-width: 600px;
+			font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+			overflow: visible;
+		}
 
-.mapboxgl-popup-content {
-	box-shadow: none;
-	color: black !important;
-	padding: 24px;
-	padding-top: 0px;
-	border-radius: 12px;
-}
+		.mapboxgl-popup-content {
+			box-shadow: none;
+			color: black !important;
+			padding: 24px;
+			padding-top: 0px;
+			border-radius: 12px;
+		}
 
-.mapboxgl-popup-close-button {
-	top: 5%;
-	right: 5%;
-}
+		.mapboxgl-popup-close-button {
+			top: 5%;
+			right: 5%;
+		}
 
-.mapboxgl-popup h1 {
-	font-family: sans-serif;
-	font-size: xx-large;
-	text-align: center;
-	margin-bottom: 8px;
-}
+		.mapboxgl-popup h1 {
+			font-family: sans-serif;
+			font-size: xx-large;
+			text-align: center;
+			margin-bottom: 8px;
+		}
 
-.mapboxgl-popup h2 {
-	color: dimgrey;
-	font-size: small;
-	text-align: center;
-	font-style: italic;
-	font-weight: normal;
-	margin: 4px;
-}
+		.mapboxgl-popup h2 {
+			color: dimgrey;
+			font-size: small;
+			text-align: center;
+			font-style: italic;
+			font-weight: normal;
+			margin: 4px;
+		}
 	</style>
 </head>
 
 <body>
 	<div id="map">
 	<script src="map.js" type="text/javascript"></script>
-	<script src="eolia-iii-legacy.js" type="text/javascript"></script>
+	<script>
+		// ---------------- Utility functions ----------------
+		function createPopup(e) {
+			var popupContent = "<h1>" + (e.features[0].properties.name || "Missing Name!") + "</h1>";
+			popupContent += "\n<h2>" + (e.features[0].properties.tagline || "") + "</h2>";
+			popupContent += "<hr>" + (e.features[0].properties.lore || "? ? ?") + (e.features[0].properties.lore2 || "");
+
+			new mapboxgl.Popup({ offset: [0.0, -36.0] }).setLngLat(e.features[0].geometry.coordinates.slice()).setHTML(popupContent).addTo(map);
+		}
+
+		// ---------------- Map config ----------------
+		//old account access token
+		mapboxgl.accessToken = "pk.eyJ1IjoiaWFuc2FubmFyIiwiYSI6ImNrOHdnajF6MDB3YXQzbm1oMm95eWltaTMifQ.cv0Yq39pzSZ5dFMI0jC7BQ";
+
+		// these defaults are used for the map object as well as the reset view button
+		const defaultCenter = [0, -10];
+		const defaultZoom = 2;
+		const defaultPitch = 15;
+
+		var map = new mapboxgl.Map({
+			container: "map",
+			style: "mapbox://styles/iansannar/ck9rz6wkb1yeu1ioz2iflnjaf",
+			center: defaultCenter,
+			zoom: defaultZoom,
+			pitch: defaultPitch,
+			maxZoom: 6.0,
+			maxPitch: 70,
+			maxBounds: [[-270, -80], [270, 80]]
+		});
+
+		// ---------------- Javascript events ----------------
+		// enable click events for clickable layers
+		map.on("click", "points-of-interest", createPopup);
+		map.on("click", "cities", createPopup);
+
+		// Change the cursor when it enters and leaves clickable layers
+		map.on("mouseenter", "cities", function() { map.getCanvas().style.cursor = "pointer"; });
+		map.on("mouseenter", "points-of-interest", function() { map.getCanvas().style.cursor = "pointer"; });
+		map.on('mouseleave', "cities", function () { map.getCanvas().style.cursor = ''; });
+		map.on('mouseleave', "points-of-interest", function () { map.getCanvas().style.cursor = ''; });
+	</script>
 	</div>
 </body>
 

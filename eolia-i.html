@@ -38,7 +38,26 @@
 <body>
 	<div id="map">
 	<script src="map.js" type="text/javascript"></script>
-	<script src="eolia-i.js" type="text/javascript"></script>
+	<script>
+		// these defaults are used for the map object as well as the reset view button
+		const defaultCenter = [0, -10];
+		const defaultZoom = 2;
+		const defaultPitch = 15;
+
+		var map = new mapboxgl.Map({
+			container: "map",
+			style: "mapbox://styles/neonfable/cl2yj41t2000t15k3x0u09nj4",
+			center: defaultCenter,
+			zoom: defaultZoom,
+			pitch: defaultPitch,
+			maxZoom: 6.0,
+			maxPitch: 70,
+			maxBounds: [[-270, -80], [270, 80]]
+		});
+
+		// see ./map.js for boilerplate
+		addInteractivity(map);
+	</script>
 	</div>
 </body>
 
