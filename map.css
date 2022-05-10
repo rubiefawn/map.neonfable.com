@@ -55,14 +55,12 @@ img.inline-icon {
 
 .mapboxgl-popup h1 {
 	font-family: "ITC Souvenir";
-	font-size: xx-large;
 	text-align: center;
 	margin-bottom: 8px;
 }
 
 .mapboxgl-popup h2 {
 	color: dimgrey;
-	font-size: small;
 	text-align: center;
 	font-style: italic;
 	font-weight: normal;
@@ -125,9 +123,8 @@ img.inline-icon {
 h1.card {
 	padding: 0;
 	white-space: pre-wrap;
-	font-size: 1.5em;
+	font-size: 1.9em;
 	text-align: center;
-	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
