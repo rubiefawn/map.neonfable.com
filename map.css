@@ -54,7 +54,7 @@ img.inline-icon {
 }
 
 .mapboxgl-popup h1 {
-	font-family: sans-serif;
+	font-family: "ITC Souvenir";
 	font-size: xx-large;
 	text-align: center;
 	margin-bottom: 8px;
@@ -79,7 +79,7 @@ img.inline-icon {
 .card-art {
 	width: 58mm;
 	height: 36mm;
-	background-color: black;
+	background-color: #06080F;
 	margin-top: 2.25mm;
 	margin-bottom: 2mm;
 	margin-left: 2.5mm;
@@ -90,10 +90,29 @@ img.inline-icon {
 	object-fit: cover;
 }
 
+.card-art-attr {
+	background-color: #06080F;
+	width: 63mm;
+	height: 6mm;
+	border-radius: 0 0 2.75mm 2.75mm;
+	font-family: "ITC Souvenir";
+	font-size: small;
+	color: #e7e0d9;
+	text-align: center;
+}
+
+.card-link {
+	text-align: center;
+	font-family: "ITC Souvenir";
+	font-size: 0.8em;
+	color: #e7e0d9;
+	text-decoration: none;
+}
+
 .lore {
 	font-size: 1em;
 	width: 58mm;
-	color: white;
+	color: #e7e0d9;
 	max-height: 24mm;
 	margin-left: 2.5mm;
 	margin-right: 2.5mm;
@@ -126,7 +145,7 @@ h2.card {
 	text-align: center;
 	height: 3.5mm;
 	max-height: 3.5mm;
-	color: white;
+	color: #e7e0d9;
 	font-family: "ITC Souvenir";
 }
 

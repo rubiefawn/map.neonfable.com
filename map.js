@@ -80,7 +80,7 @@ function createCardPopup(e) {
 			<img class="card-art" src="${e.features[0].properties.image || "https://cdnb.artstation.com/p/assets/images/images/018/234/967/large/victor-hugo-harmatiuk-tryhard-enviroment.jpg?1558657312"}"/>
 			<div id="lore" class="lore">${(e.features[0].properties.lore || "The secrets of this place have not yet been revealed.") + (e.features[0].properties.lore2 || "")}</div>
 			</div>
-			<div style="background-color: black; width: 63mm; height: 6mm; border-radius: 0 0 2.75mm 2.75mm; margins: 0;"></div>
+			<div class="card-art-attr"><a href="${e.features[0].properties.attribution}" target='_blank' rel='noopener noreferrer' class="card-link">🖌 ${e.features[0].properties.artist || "Attribution needed!"}</a></div>
 		</div>`;
 		// AnimatedPopup courtesy of https://nagix.github.io/mapbox-gl-animated-popup/
 		var popup = new AnimatedPopup({
