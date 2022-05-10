@@ -4,6 +4,7 @@
 	top: 0;
 	bottom: 0;
 	left: 0;
+	background-color: #06080F;
 }
 
 .mapbox-gl-home {
@@ -31,23 +32,25 @@ img.inline-icon {
 	font-size: 16px;
 }
 
-.mapboxgl-popup {
-	max-width: 600px;
-	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-	overflow: visible;
-}
-
 .mapboxgl-popup-content {
 	box-shadow: none;
-	color: black !important;
-	padding: 24px;
-	padding-top: 0px;
-	border-radius: 12px;
+	padding: 0;
+	margin: 0;
+	width: 63mm;
+	height: 88mm;
+	border-radius: 2.75mm;
+	background-color: rgba(0, 0, 0, 0);
+	transform: scale(1.5);
+}
+
+.mapboxgl-popup-tip {
+	display: none;
 }
 
 .mapboxgl-popup-close-button {
 	top: 5%;
 	right: 5%;
+	display: none;
 }
 
 .mapboxgl-popup h1 {
@@ -64,4 +67,77 @@ img.inline-icon {
 	font-style: italic;
 	font-weight: normal;
 	margin: 4px;
+}
+
+#card-body {
+	width: 100%;
+	height: 82mm;
+	border-radius: 2.75mm 2.75mm 0 0;
+	margin: 0;
+}
+
+.card-art {
+	width: 58mm;
+	height: 36mm;
+	background-color: black;
+	margin-top: 2.25mm;
+	margin-bottom: 2mm;
+	margin-left: 2.5mm;
+	margin-right: 2.5mm;
+	overflow: hidden;
+	align-content: center;
+	image-rendering: smooth;
+	object-fit: cover;
+}
+
+.lore {
+	font-size: 1em;
+	width: 58mm;
+	color: white;
+	max-height: 24mm;
+	margin-left: 2.5mm;
+	margin-right: 2.5mm;
+	overflow-wrap: break-word;
+	overflow-y: hidden;
+	font-family: "ITC Souvenir";
+	line-height: 100%;
+}
+
+h1.card {
+	padding: 0;
+	white-space: pre-wrap;
+	font-size: 1.5em;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	height: 10mm;
+	max-height: 10mm;
+	margin: 0;
+	color: #ecdb2dff;
+	font-family: "ITC Souvenir";
+}
+
+h2.card {
+	padding: 0;
+	margin: 0;
+	font-size: 0.75em;
+	text-align: center;
+	height: 3.5mm;
+	max-height: 3.5mm;
+	color: white;
+	font-family: "ITC Souvenir";
+}
+
+@media (max-width: 1500px) {
+	.mapboxgl-popup-content {
+		transform: scale(1.25);
+	}
+}
+
+@media (max-width: 1000px) {
+	.mapboxgl-popup-content {
+		transform: scale(1.0);
+	}
 }
