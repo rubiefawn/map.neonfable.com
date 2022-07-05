@@ -71,16 +71,27 @@ const cardColors = {
 // Creates a MapboxGL popup object based on a clickable layer but in the style of a MTG card
 function createCardPopup(e) {
 	if (e.features[0].properties.clickable) {
+		var cardArt = e.features[0].properties.image;
+		var artistName = e.features[0].properties.artist;
+		var artistLink = e.features[0].properties.attribution;
+
+		// Set default image & attribution if any one of these three are missing
+		if (!e.features[0].properties.image || !e.features[0].properties.attribution || !e.features[0].properties.artist) {
+			cardArt = "https://cdnb.artstation.com/p/assets/images/images/024/068/475/large/ian-sannar-untitled-2.jpg?1581228248";
+			artistName = "Fawn";
+			artistLink = "https://www.artstation.com/innoxenxe";
+		}
+
 		var popupContent = `
 		<div id="card">
 			<div id="card-body" class="card" style="background-color: #${cardColors[e.features[0].properties.cardcolor] || "692d51"};">
 			<div id="top-margin" style="height: 2.15mm;"/></div>
 			<h2 id="subtitle" class="card">${e.features[0].properties.subtitle || "AN UNKNOWN PLACE,"}</h2>
 			<h1 id="title" class="card">${e.features[0].properties.title || "Lost to Time"}</h1>
-			<img class="card-art" src="${e.features[0].properties.image || "https://cdnb.artstation.com/p/assets/images/images/018/234/967/large/victor-hugo-harmatiuk-tryhard-enviroment.jpg?1558657312"}"/>
+			<img class="card-art" src="${cardArt}"/>
 			<div id="lore" class="lore">${(e.features[0].properties.lore || "The secrets of this place have not yet been revealed.") + (e.features[0].properties.lore2 || "")}</div>
 			</div>
-			<div class="card-art-attr"><a href="${e.features[0].properties.attribution}" target='_blank' rel='noopener noreferrer' class="card-link">🖌 ${e.features[0].properties.artist || "Attribution needed!"}</a></div>
+			<div class="card-art-attr"><a href="${artistLink}" target='_blank' rel='noopener noreferrer' class="card-link">🖌 ${artistName}</a></div>
 		</div>`;
 		// AnimatedPopup courtesy of https://nagix.github.io/mapbox-gl-animated-popup/
 		var popup = new AnimatedPopup({
