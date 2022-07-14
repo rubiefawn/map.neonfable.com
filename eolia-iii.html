@@ -42,7 +42,7 @@
 		// these defaults are used for the map object as well as the reset view button
 		const defaultCenter = [0, -10];
 		const defaultZoom = 2;
-		const defaultPitch = 15;
+		const defaultPitch = 0;
 
 		var map = new mapboxgl.Map({
 			container: "map",
@@ -52,7 +52,7 @@
 			pitch: defaultPitch,
 			maxZoom: 6.0,
 			maxPitch: 70,
-			maxBounds: [[-270, -80], [270, 80]]
+			maxBounds: [[-3600, -80], [3600, 80]]
 		});
 
 		// see ./map.js for boilerplate
