@@ -108,28 +108,23 @@ img.inline-icon {
 }
 
 .lore {
-	font-size: 1em;
+	font-size: 1.0em;
 	width: 58mm;
 	color: #e7e0d9;
 	max-height: 24mm;
 	margin-left: 2.5mm;
 	margin-right: 2.5mm;
-	overflow-wrap: break-word;
-	overflow-y: hidden;
-	font-family: "ITC Souvenir";
 	line-height: 100%;
+	padding: 0;
+	text-align: left;
+	font-family: "ITC Souvenir";
 }
 
 h1.card {
 	padding: 0;
 	white-space: pre-wrap;
-	font-size: 1.9em;
+	font-size: 1.45em;
 	text-align: center;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	height: 10mm;
-	max-height: 10mm;
 	margin: 0;
 	color: #ecdb2dff;
 	font-family: "ITC Souvenir";
@@ -144,6 +139,22 @@ h2.card {
 	max-height: 3.5mm;
 	color: #e7e0d9;
 	font-family: "ITC Souvenir";
+}
+
+div.card-title {
+	width: 58mm;
+	margin-left: 2.5mm;
+	margin-right: 2.5mm;
+	height: 10mm;
+	line-height: 10mm;
+}
+
+span.card-title {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	text-align: center;
+	width: 100%;
 }
 
 @media (max-width: 1500px) {

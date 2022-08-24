@@ -87,7 +87,7 @@ function createCardPopup(e) {
 			<div id="card-body" class="card" style="background-color: #${cardColors[e.features[0].properties.cardcolor] || "692d51"};">
 			<div id="top-margin" style="height: 2.15mm;"/></div>
 			<h2 id="subtitle" class="card">${e.features[0].properties.subtitle || "AN UNKNOWN PLACE,"}</h2>
-			<h1 id="title" class="card">${e.features[0].properties.title || "Lost to Time"}</h1>
+			<div class="card-title"><span class="card-title"><h1 id="title" class="card">${e.features[0].properties.title || "Lost to Time"}</h1></span></div>
 			<img class="card-art" src="${cardArt}"/>
 			<div id="lore" class="lore">${(e.features[0].properties.lore || "The secrets of this place have not yet been revealed.") + (e.features[0].properties.lore2 || "")}</div>
 			</div>
